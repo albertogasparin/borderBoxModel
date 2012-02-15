@@ -2,8 +2,8 @@
  * Add support fo CSS3 box-sizing: border-box model for IE6 and IE7
  * 
  * @author Alberto Gasparin http://albertogasparin.it/
- * @version 1.0, License MIT
+ * @version 1.1, License MIT
  * 
  **/
 
-var borderBoxModel=(function(){var h=document.getElementsByTagName("*"),d,f,e,g="border-box";for(var c=0,a=h.length;c<a;c++){d=h[c];e=d.style;f=d.currentStyle;if(e.boxSizing==g||e["box-sizing"]==g||f.boxSizing==g||f["box-sizing"]==g){b()}}function b(){if(parseInt(f.width,10)||parseInt(e.width,10)){var i=d.offsetWidth,n=parseInt(f.borderLeftWidth||e.borderLeftWidth,10)||0,p=parseInt(f.borderRightWidth||e.borderRightWidth,10)||0,l=parseInt(f.paddingLeft||e.paddingLeft,10),k=parseInt(f.paddingRight||e.paddingRight,10);e.width=i-(n+l+k+p)*2}if(parseInt(f.height)||parseInt(e.height)){var q=d.offsetHeight,m=parseInt(f.borderTopWidth||e.borderTopWidth,10)||0,o=parseInt(f.borderBottomWidth||e.borderBottomWidth,10)||0,r=parseInt(f.paddingTop||e.paddingTop,10),j=parseInt(f.paddingBottom||e.paddingBottom,10);e.height=q-(m+r+j+o)*2}}})();
+var borderBoxModel=function(l,d){function m(){e=parseInt(b.width,10)||parseInt(a.width,10);f=parseInt(b.height,10)||parseInt(a.height,10);if(e){var c=parseInt(b.borderLeftWidth||a.borderLeftWidth,10)||0,g=parseInt(b.borderRightWidth||a.borderRightWidth,10)||0,h=parseInt(b.paddingLeft||a.paddingLeft,10),i=parseInt(b.paddingRight||a.paddingRight,10);if(c=c+h+i+g)a.width=e-c}if(f){c=parseInt(b.borderTopWidth||a.borderTopWidth,10)||0;g=parseInt(b.borderBottomWidth||a.borderBottomWidth,10)||0;h=parseInt(b.paddingTop||a.paddingTop,10);i=parseInt(b.paddingBottom||a.paddingBottom,10);if(c=c+h+i+g)a.height=f-c}}for(var j,b,a,e,f,k=0,n=l.length;k<n;k++){j=l[k];a=j.style;b=j.currentStyle;if(a.boxSizing==d||a["box-sizing"]==d||b.boxSizing==d||b["box-sizing"]==d)m()}}(document.getElementsByTagName("*"),"border-box");
