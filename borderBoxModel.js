@@ -20,8 +20,9 @@ var borderBoxModel = (function(elements, value) {
        || cs.boxSizing == value || cs["box-sizing"] == value) {
       
       // change width and height
-      apply();
-      
+      try {
+        apply();
+      } catch(e) {}
     }
   }
   
